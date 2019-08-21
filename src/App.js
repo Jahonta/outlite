@@ -1,15 +1,17 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import TextMode from "./TextMode";
 import CardMode from './CardMode';
 
 const App = () => {
   return (
-    <div className="page">
-      <Header />
-      <CardMode />
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={CardMode} exact/>
+        <Route path="/cardmode" component={CardMode} exact/>
+        <Route path="/textmode" component={TextMode} exact/>
+      </Switch>
+    </Router>
   )
   
 }

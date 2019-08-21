@@ -102,14 +102,17 @@ body {
 
 .SwitchModeLink {
   padding: 1rem;
-  color: var(--text-primary-color);
-  text-align: center;
-  transition: 0.3s;
-  cursor: pointer;
+  text-align: center;  
 }
 
-.SwitchModeLink:hover {
-  transform: scale(1.05);
+.SwitchModeLink a {
+  color: var(--text-primary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.SwitchModeLink a:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */

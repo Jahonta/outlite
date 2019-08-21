@@ -1,14 +1,21 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Header from './Header';
+import Footer from './Footer';
 
 
 const TextMode = () => {
   return (
-    <>
-    <nav className="SwitchModeLink">Switch to the card mode</nav>
-    <main className="TextMode">
-      
-    </main>
-    </>
+    <div className="page">
+      <Header />    
+      <nav className="SwitchModeLink">
+        <Link to="/cardmode">Switch to the card mode</Link>
+        </nav>
+      <main className="CardMode">
+        TextMode
+      </main>
+      <Footer />
+    </div>
   )
 }
 
