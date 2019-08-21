@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TextMode from "./TextMode";
-import CardMode from './CardMode';
+import TextMode from "./components/TextMode";
+import CardMode from './components/CardMode';
 
 const App = () => {
   return (
