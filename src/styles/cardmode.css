@@ -1,0 +1,16 @@
+/* CARD MODE */
+
+.CardMode {  
+  color: var(--primary-text-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.Accordion,
+.SingleCard {
+  background-color: var(--light-primary-color);
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}

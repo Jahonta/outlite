@@ -1,0 +1,127 @@
+/* COMMON STYLES */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  padding: 0.75rem 1.25rem;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* HEADER */
+
+.Header {
+  background-color: var(--dark-primary-color);
+  color: var(--light-primary-color);
+  display: flex;
+  padding: 1rem;
+  box-shadow: 0 4px 4px var(--dark-primary-color);
+}
+
+.Logo {
+  position: relative;
+  background-color: var(--light-primary-color);
+  padding: 0.5rem;
+  padding-right: 2rem;
+  margin-right: auto;
+}
+
+.Logo-title {
+  color: var(--primary-text-color);
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+.Logo-title--letter {
+  position: relative;
+  color: var(--letter);
+  font-size: 3rem;
+  margin: 0.5rem;
+}
+
+.Logo-title--letter::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.3rem;
+  left: -0.6rem;
+  border: 2px solid var(--dark-primary-color);
+  width: 3rem;
+  height: 3rem;
+}
+
+.Logo-version {
+  position: absolute;
+  top: 0;
+  right: 0.2rem;
+  color: var(--secondary-text-color);
+}
+
+.Controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Controls-btn {
+  background-color: var(--default-primary-color);
+  color: var(--text-primary-color);
+  border: none;
+  transition: 0.3s;
+}
+
+.Controls-btn:not(:last-child) {
+  margin-right: 0.7rem;
+}
+
+.Controls-btn:hover {
+  background-color: var(--light-primary-color);
+  color: var(--primary-text-color);
+}
+
+/* SWITCH LINK */
+
+.SwitchModeLink {
+  padding: 1rem;
+  color: var(--text-primary-color);
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.SwitchModeLink:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+
+.Footer {
+  margin-top: auto;
+  background-color: var(--dark-primary-color);
+  color: var(--light-primary-color);
+  display: flex;
+  padding: 20px;
+}
+
+.Footer-copyright {
+  margin-left: auto;
+}
