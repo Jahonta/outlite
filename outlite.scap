@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <ScappleDocument ID="A1E8A852-133C-4DA8-BAE8-68B52940EEFC" Version="1.1">
    <Notes>
-      <Note Width="305.834" FontSize="12" ID="0" Position="611.7,10.1" Level="2">
+      <Note Width="305.834" FontSize="12" ID="0" Position="611.7,49.9" Level="2">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -31,7 +31,7 @@ Methods:
 — putIntoStorage()</String>
          <ConnectedNoteIDs>1-2</ConnectedNoteIDs>
       </Note>
-      <Note Width="200.833" FontSize="12" ID="1" Position="870.8,405.0">
+      <Note Width="200.833" FontSize="12" ID="1" Position="870.8,444.8">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -45,7 +45,7 @@ Props:
 — submitHandler={updateCards}</String>
          <ConnectedNoteIDs>0, 10, 12-14</ConnectedNoteIDs>
       </Note>
-      <Note Width="204.167" FontSize="12" ID="2" Position="405.0,393.5">
+      <Note Width="204.167" FontSize="12" ID="2" Position="405.0,433.3">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -60,7 +60,7 @@ Props:
 — submitHandler={ handleSubmit}</String>
          <ConnectedNoteIDs>0, 3-4</ConnectedNoteIDs>
       </Note>
-      <Note Width="207.5" FontSize="12" ID="3" Position="181.7,551.2">
+      <Note Width="207.5" FontSize="12" ID="3" Position="181.7,591.0">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -74,7 +74,7 @@ Props:
 — dropHandler={dropHandler}</String>
          <ConnectedNoteIDs>2, 9, 15</ConnectedNoteIDs>
       </Note>
-      <Note Width="200.267" FontSize="12" ID="4" Position="592.2,551.2">
+      <Note Width="200.267" FontSize="12" ID="4" Position="592.2,591.0">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -87,7 +87,7 @@ Props:
 — submitHandler={updateCards}</String>
          <ConnectedNoteIDs>2, 5-6, 16</ConnectedNoteIDs>
       </Note>
-      <Note Width="172.091" FontSize="12" ID="5" Position="425.8,708.7">
+      <Note Width="172.091" FontSize="12" ID="5" Position="425.8,748.5">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -112,7 +112,7 @@ Handlers:
 — onSubmit => submitHandler(card)</String>
          <ConnectedNoteIDs>4</ConnectedNoteIDs>
       </Note>
-      <Note Width="183.333" FontSize="12" ID="6" Position="626.7,712.0">
+      <Note Width="183.333" FontSize="12" ID="6" Position="626.7,751.8">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -126,7 +126,7 @@ Handlers:
 — onClick => clickHandler(id, delete))</String>
          <ConnectedNoteIDs>4</ConnectedNoteIDs>
       </Note>
-      <Note Width="172.8" FontSize="12" ID="9" Position="43.0,708.1">
+      <Note Width="172.8" FontSize="12" ID="9" Position="43.0,747.9">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -137,7 +137,7 @@ Handlers:
 — onClick => clickHandler(e.target.id, check)</String>
          <ConnectedNoteIDs>3</ConnectedNoteIDs>
       </Note>
-      <Note Width="135.833" FontSize="12" ID="10" Position="930.8,706.2">
+      <Note Width="135.833" FontSize="12" ID="10" Position="930.8,746.0">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -153,7 +153,7 @@ Handlers:
 clickHandler(id, card)</String>
          <ConnectedNoteIDs>1</ConnectedNoteIDs>
       </Note>
-      <Note Width="165.291" FontSize="12" ID="12" Position="1073.8,704.3">
+      <Note Width="165.291" FontSize="12" ID="12" Position="1073.8,744.1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -178,7 +178,7 @@ Handlers:
 — onSubmit => submitHandler(card)</String>
          <ConnectedNoteIDs>1</ConnectedNoteIDs>
       </Note>
-      <Note Width="140.833" FontSize="12" ID="13" Position="1247.5,705.3">
+      <Note Width="140.833" FontSize="12" ID="13" Position="1247.5,745.1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -192,7 +192,7 @@ Handlers:
 — onClick => clickHandler(id, delete)</String>
          <ConnectedNoteIDs>1</ConnectedNoteIDs>
       </Note>
-      <Note Width="175" FontSize="12" ID="14" Position="1395.8,702.3">
+      <Note Width="175" FontSize="12" ID="14" Position="1395.8,742.1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -203,7 +203,7 @@ Handlers:
 — onClick => clickHandler(e.target.id, check)</String>
          <ConnectedNoteIDs>1</ConnectedNoteIDs>
       </Note>
-      <Note Width="146.313" FontSize="12" ID="15" Position="243.4,705.8">
+      <Note Width="146.313" FontSize="12" ID="15" Position="243.4,745.6">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -221,7 +221,7 @@ clickHandler(id, card)
 dropHandler(new_cards)</String>
          <ConnectedNoteIDs>3</ConnectedNoteIDs>
       </Note>
-      <Note Width="77.2499" FontSize="12" ID="16" Position="822.2,714.0">
+      <Note Width="77.2499" FontSize="12" ID="16" Position="822.2,753.8">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -232,7 +232,7 @@ Props:
 — active</String>
          <ConnectedNoteIDs>4</ConnectedNoteIDs>
       </Note>
-      <Note Width="108.789" FontSize="12" ID="7" Position="30.8,20.1">
+      <Note Width="108.789" FontSize="12" ID="7" Position="30.8,59.9">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -251,7 +251,7 @@ Props:
   emptyCard
 }</String>
       </Note>
-      <Note Width="241.667" FontSize="12" ID="11" Position="55.0,245.2">
+      <Note Width="241.667" FontSize="12" ID="11" Position="55.0,285.0">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -261,7 +261,7 @@ Props:
 return array[i]
 }</String>
       </Note>
-      <Note Width="193.333" FontSize="12" ID="17" Position="157.5,20.2" Level="1">
+      <Note Width="193.333" FontSize="12" ID="17" Position="157.5,60.0" Level="1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -276,7 +276,7 @@ return array[i]
   return cards.length - 1
 }</String>
       </Note>
-      <Note Width="116.604" FontSize="12" ID="18" Position="367.5,21.0">
+      <Note Width="116.604" FontSize="12" ID="18" Position="367.5,60.8">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -289,7 +289,7 @@ return array[i]
   status: false
 }</String>
       </Note>
-      <Note Width="263.333" FontSize="12" ID="19" Position="945.0,11.8">
+      <Note Width="263.333" FontSize="12" ID="19" Position="945.0,51.6">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -304,7 +304,7 @@ return array[i]
     setCards([…cards, emptyCard])  
 }</String>
       </Note>
-      <Note Width="241.667" FontSize="12" ID="20" Position="951.7,268.5">
+      <Note Width="241.667" FontSize="12" ID="20" Position="951.7,308.3">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -316,7 +316,7 @@ return array[i]
   updateCards(j);
 }</String>
       </Note>
-      <Note Width="300" FontSize="12" ID="8" Position="1230.8,8.5" Level="1">
+      <Note Width="300" FontSize="12" ID="8" Position="1227.2,23.4" Level="1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -336,7 +336,7 @@ return array[i]
   }
 }</String>
       </Note>
-      <Note Width="230" FontSize="12" ID="21" Position="950.8,206.3">
+      <Note Width="230" FontSize="12" ID="21" Position="950.8,246.1">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
@@ -345,7 +345,7 @@ return array[i]
   setCards(new_cards);
 }</String>
       </Note>
-      <Note Width="150.159" FontSize="12" ID="22" Position="1240.3,274.7">
+      <Note Width="150.159" FontSize="12" ID="22" Position="1240.3,314.5">
          <Appearance>
             <Alignment>Left</Alignment>
             <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
