@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ScappleDocument ID="A1E8A852-133C-4DA8-BAE8-68B52940EEFC" Version="1.1">
+   <Notes>
+      <Note Width="305.834" FontSize="12" ID="0" Position="611.7,10.1" Level="2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>App
+
+Initial:
+data = localStorage || [emptyCard];
+[cards, setCards] = useState(data);
+[active, setActive] = useState(null);
+
+useEffect(() => {
+  putIntoStorage(cards);
+}, [cards])
+
+Methods:
+— getCard(id, array = cards)
+— getEmptyID()
+— updateCards(obj)
+— handleStatusChange(id)
+— handleSubmit(obj)
+— handleClick(id, action)
+— handleDrop(new_cards) 
+— import()
+— export()
+— reset()
+— putIntoStorage()</String>
+         <ConnectedNoteIDs>1-2</ConnectedNoteIDs>
+      </Note>
+      <Note Width="200.833" FontSize="12" ID="1" Position="870.8,405.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>TextMode
+
+Props:
+— cards={cards}
+— active={getCard(active)}
+— clickHandler={handleClick}
+— submitHandler={updateCards}</String>
+         <ConnectedNoteIDs>0, 10, 12-14</ConnectedNoteIDs>
+      </Note>
+      <Note Width="204.167" FontSize="12" ID="2" Position="405.0,393.5">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>CardMode
+
+Props:
+— cards={cards}
+— active={getCard(active)}
+— clickHandler={handleClick}
+— dropHandler={handleDrop}
+— submitHandler={ handleSubmit}</String>
+         <ConnectedNoteIDs>0, 3-4</ConnectedNoteIDs>
+      </Note>
+      <Note Width="207.5" FontSize="12" ID="3" Position="181.7,551.2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>CardList
+
+Props:
+— cards
+— active
+— clickHandler={clickHandler}
+— dropHandler={dropHandler}</String>
+         <ConnectedNoteIDs>2, 9, 15</ConnectedNoteIDs>
+      </Note>
+      <Note Width="200.267" FontSize="12" ID="4" Position="592.2,551.2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>CardInspector
+
+Props:
+— active
+— clickHandler={handleClick}
+— submitHandler={updateCards}</String>
+         <ConnectedNoteIDs>2, 5-6, 16</ConnectedNoteIDs>
+      </Note>
+      <Note Width="172.091" FontSize="12" ID="5" Position="425.8,708.7">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Edit
+
+Props:
+— active
+
+State:
+card = {
+id: active.id | 0
+title: value
+excerpt: value
+content: value
+status: value
+}
+
+Handlers:
+— onChange => setState(card)
+— onCancel => setState(props.active)
+— onSubmit => submitHandler(card)</String>
+         <ConnectedNoteIDs>4</ConnectedNoteIDs>
+      </Note>
+      <Note Width="183.333" FontSize="12" ID="6" Position="626.7,712.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Delete
+
+Props:
+— active
+
+Handlers:
+— onClick => clickHandler(id, delete))</String>
+         <ConnectedNoteIDs>4</ConnectedNoteIDs>
+      </Note>
+      <Note Width="172.8" FontSize="12" ID="9" Position="43.0,708.1">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Check
+
+Handlers:
+— onClick => clickHandler(e.target.id, check)</String>
+         <ConnectedNoteIDs>3</ConnectedNoteIDs>
+      </Note>
+      <Note Width="135.833" FontSize="12" ID="10" Position="930.8,706.2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Read
+
+Props:
+— cards
+— active
+
+Handlers:
+— onClick =>
+clickHandler(id, card)</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note Width="165.291" FontSize="12" ID="12" Position="1073.8,704.3">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Edit
+
+Props:
+— active
+
+State:
+card = {
+id: active.id | 0
+title: value
+excerpt: value
+content: value
+status: value
+}
+
+Handlers:
+— onChange => setState(card)
+— onCancel => setState(props.active)
+— onSubmit => submitHandler(card)</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note Width="140.833" FontSize="12" ID="13" Position="1247.5,705.3">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Delete
+
+Props:
+— active
+
+Handlers:
+— onClick => clickHandler(id, delete)</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note Width="175" FontSize="12" ID="14" Position="1395.8,702.3">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Check
+
+Handlers:
+— onClick => clickHandler(e.target.id, check)</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note Width="146.313" FontSize="12" ID="15" Position="243.4,705.8">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Read
+
+Props:
+— cards
+— active
+
+Handlers:
+— onClick =>
+clickHandler(id, card)
+— onDrop =>
+dropHandler(new_cards)</String>
+         <ConnectedNoteIDs>3</ConnectedNoteIDs>
+      </Note>
+      <Note Width="77.2499" FontSize="12" ID="16" Position="822.2,714.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>Read
+
+Props:
+— active</String>
+         <ConnectedNoteIDs>4</ConnectedNoteIDs>
+      </Note>
+      <Note Width="108.789" FontSize="12" ID="7" Position="30.8,20.1">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>cards - array
+
+[0] : {
+  id: number
+  title: string
+  excerpt: string
+  content: string
+  status: boolean
+}
+
+[cards.length - 1] {
+  emptyCard
+}</String>
+      </Note>
+      <Note Width="241.667" FontSize="12" ID="11" Position="55.0,245.2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>getCard = (id, array = cards) => {
+ i = array.findIndex(card => card.id == id)
+return array[i]
+}</String>
+      </Note>
+      <Note Width="193.333" FontSize="12" ID="17" Position="157.5,20.2" Level="1">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>getEmptyID - function 
+
+() => {
+  for (i &lt; cards.length) {
+    j = cards.IndexOf(id == i)
+   j == -1 ? return j
+  }
+  return cards.length - 1
+}</String>
+      </Note>
+      <Note Width="116.604" FontSize="12" ID="18" Position="367.5,21.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>emptyCard  = { 
+  id: getEmptyID()
+  title: New Card
+  excerpt: null
+  content: null
+  status: false
+}</String>
+      </Note>
+      <Note Width="263.333" FontSize="12" ID="19" Position="945.0,11.8">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>updateCards = (obj) => {
+   new_cards = […cards];
+  i = getCard(obj.id, new_cards);
+  i = {…obj};
+  setCards(new_cards);
+  ? ( obj.id == empty ) => {
+    empty = getEmptyID();
+    setCards([…cards, emptyCard])  
+}</String>
+      </Note>
+      <Note Width="241.667" FontSize="12" ID="20" Position="951.7,268.5">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>handleStatusChange = (id) => {
+  i = getCard(id);
+  j = {…i};
+  j.status = !j.status;
+  updateCards(j);
+}</String>
+      </Note>
+      <Note Width="300" FontSize="12" ID="8" Position="1230.8,8.5" Level="1">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>handleClick = (id, action) => {
+ switch (action):
+    card => {
+      setActive(id);
+  }
+   check => {
+    handleStatusChange(id)
+}
+   delete() => {
+    if (id == empty) return;
+    new_cards = cards.filter(card => card.id != id);
+    setCards(new_cards);
+  }
+}</String>
+      </Note>
+      <Note Width="230" FontSize="12" ID="21" Position="950.8,206.3">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>handleDrop = (new_cards) => {
+  setCards(new_cards);
+}</String>
+      </Note>
+      <Note Width="150.159" FontSize="12" ID="22" Position="1240.3,274.7">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Weight="2" Style="Rounded">0.564706 0.729412 0.945098</Border>
+         </Appearance>
+         <String>handleSubmit = (obj) => {
+  if obj.id == 0 {
+ obj.id = getEmptyID();
+}
+  updateCards(obj)
+}</String>
+      </Note>
+   </Notes>
+   <BackgroundShapes/>
+   <NoteStyles>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Blue Bubble" ID="0F80109B-5B8D-44E3-80DD-C5FE4C187A9A" AffectTextColor="No" AffectNoteBody="Yes" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.485893 0.568933 0.756207</BorderColor>
+         <FillColor>0.844068 0.869596 0.923064</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Green Bubble" ID="19BA1A8B-ADCA-41B9-817D-6DDEFC6DF076" AffectTextColor="No" AffectNoteBody="Yes" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.399100 0.583322 0.354864</BorderColor>
+         <FillColor>0.808835 0.872419 0.801343</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Brown Bubble" ID="9F666333-F79B-48CF-AFA4-F5807A867020" AffectTextColor="No" AffectNoteBody="Yes" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.269490 0.164034 0.186694</BorderColor>
+         <FillColor>0.934157 0.888319 0.785290</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Pink Bubble" ID="B8C207B9-D3EA-41D4-BDD8-D59428D3266B" AffectTextColor="No" AffectNoteBody="Yes" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.690303 0.407263 0.550912</BorderColor>
+         <FillColor>0.898329 0.817472 0.865339</FillColor>
+      </Style>
+      <Style AffectFontStyle="Yes" AffectAlignment="Yes" Name="Title Text" ID="4D8BC3D2-9218-43D4-A1CE-7E4A6CE3ED5E" AffectTextColor="No" AffectNoteBody="No" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <IsBold>Yes</IsBold>
+         <FontSize>12.0</FontSize>
+      </Style>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Red Text" ID="B907A638-5DFD-4FAD-8FDD-0548D3B9EF7E" AffectTextColor="Yes" AffectNoteBody="No" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <TextColor>1.0 0.0 0.0</TextColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectAlignment="No" Name="Yellow Bubble" ID="E521206A-37BE-42E8-9A58-4F6E10CDA3E7" AffectTextColor="No" AffectNoteBody="Yes" AffectSticky="No" AffectSize="No" AffectFade="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.769436 0.762219 0.390143</BorderColor>
+         <FillColor>0.912963 0.894118 0.644541</FillColor>
+      </Style>
+   </NoteStyles>
+   <UISettings>
+      <BackgroundColor>1.0 0.988006 0.945006</BackgroundColor>
+      <DefaultFont>Helvetica</DefaultFont>
+      <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+   </UISettings>
+   <PrintSettings VerticalPagination="Auto" HorizontalPagination="Clip" Orientation="Portrait" RightMargin="12.000000" BottomMargin="12.000000" HorizontallyCentered="Yes" ScaleFactor="1.000000" PagesAcross="1" PaperType="iso-a4" PagesDown="1" TopMargin="12.000000" Collates="Yes" PaperSize="-1.000000,-1.000000" LeftMargin="12.000000" VerticallyCentered="Yes"/>
+</ScappleDocument>

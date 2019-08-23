@@ -1,17 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import TextMode from "./components/TextMode";
+import Header from './components/Header';
+import Footer from './components/Footer';
 import CardMode from './components/CardMode';
 
 const App = () => {
+  // Data and Hooks
+  const emptyCard = { 
+  id: 0,
+  title: "Новая карточка",
+  excerpt: null,
+  content: null,
+  status: false,
+}
+  const data = localStorage.getItem('cards') || [emptyCard];
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/" component={CardMode} exact/>
-        <Route path="/cardmode" component={CardMode} exact/>
-        <Route path="/textmode" component={TextMode} exact/>
-      </Switch>
-    </Router>
+    <div className="page">
+      <Header />
+      <CardMode />
+      <Footer />
+    </div>
   )
   
 }
