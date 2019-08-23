@@ -2,16 +2,25 @@ import React from 'react';
 import Accordion from './Accordion';
 import CardInspector from './CardInspector';
 
-const CardMode = () => {
-   
+const CardMode = (props) => {
+
   return (
     <>   
       <nav className="SwitchModeLink">
-        Switch to the text mode
+        Перейти в текстовый режим
         </nav>
       <main className="CardMode">
-        <Accordion />
-        <CardInspector />        
+        <Accordion 
+          cards={props.cards}
+          active={props.active}
+          clickHandler={props.clickHandler}
+          dropHandler={props.dropHandler}
+        />
+        <CardInspector 
+          active={props.active}
+          clickHandler={props.clickHandler}
+          submitHandler={props.submitHandler}
+        />      
       </main>
     </>
   )

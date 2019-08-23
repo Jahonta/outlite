@@ -1,18 +1,19 @@
 import React from 'react';
 import CardListCard from './CardListCard';
 
-const Accordion = ({cards, active, handler}) => {
+const Accordion = (props) => {
   return (
     <div className="Accordion">
       <ul className="CardList">
         {
-          cards.map((card) => {
+          props.cards.map((card, i) => {
             return (
-              <CardListCard 
+              <CardListCard
+            num = {i}
             card={card} 
             key={card.id} 
-            active={active === card.id}
-            onClick={handler}
+            active={props.active.id === card.id}
+            onClick={props.clickHandler}
           />
             )
           

@@ -4,6 +4,7 @@
   color: var(--primary-text-color);
   display: flex;
   justify-content: space-between;
+  padding-bottom: 2rem;
 }
 
 .Accordion,
@@ -12,11 +13,12 @@
   padding: 1rem;
   display: flex;
   justify-content: center;
+  
 }
 
 .Accordion {
   overflow-y: scroll;
-  height: 32rem;
+  position: relative;  
 }
 
 .CardList {
@@ -24,17 +26,34 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+  position: absolute;
+  top: 0;
+  left: 0;  
 }
 
 .CardList-item {
-  width: 100%;
+  width: 100%;  
 }
 
 .CardList-cardButton {
   width: 100%;
-  background-color: var(--light-primary-color);
-  
+  background-color: var(--light-primary-color);  
+  display: flex;
+  justify-content: space-between;
+}
+
+.isNew.CardList-cardButton {
+  background-color: var(--text-primary-color);
+  color: var(--light-primary-color);
+  justify-content: center;
+}
+
+.isChecked.CardList-cardButton {
+  background-color: var(--divider-color);
+  color: var(--dark-primary-color);
+}
+.CardList-cardTitle {
+  margin: 0 1rem;
 }
 
 .CardList-cardContent {
@@ -46,4 +65,26 @@
 
 .isActive.CardList-cardContent {
   display: block;
+}
+
+.CardInspector-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.CardInspector-excerpt {
+  min-height: 4rem;
+}
+
+.CardInspector-content {
+  min-height: 12rem;
+}
+
+.CardInspector-save {
+  color: var(--success);
+}
+
+.CardInspector-delete {
+  color: var(--letter);
 }
