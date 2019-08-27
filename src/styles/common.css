@@ -55,7 +55,7 @@ body {
 
 .Logo-title--letter {
   position: relative;
-  color: var(--letter);
+  color: var(--danger);
   font-size: 3rem;
   margin: 0.5rem;
 }

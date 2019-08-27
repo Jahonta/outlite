@@ -2,7 +2,6 @@ import React from 'react';
 
 const CardListCard = (props) => {
   const handleClick = (e) => {
-    if (e.target.nodeName === "INPUT") return;
     const id = parseInt(e.target.closest('.CardList-item').id);
     const action = "card";
     props.onClick(id, action);
@@ -15,25 +14,20 @@ const CardListCard = (props) => {
   }
 
   return (
-    <li className="CardList-item" id={props.card.id} onClick={handleClick}>
-      <button className={"CardList-cardButton btn" + (props.card.id === 0 ? " isNew" : "") + (props.card.status ? " isChecked" : "")}>
-        {props.num === 0 ? '' :
-        <span className="CardList-cardTitle">{props.num}</span> 
-        }
+    <li className={"CardList-item" + (props.card.status ? " isChecked" : "")} id={props.card.id}>
+      <span className="CardList-cardNum">{props.num}</span> 
+      <button className="CardList-cardButton" type="button" onClick={handleClick}>
         <span className="CardList-cardTitle">{props.card.title}</span>
-        {props.num === 0 ? '' :
+      </button>
+      <label className="CardList-check" title="Done!">
         <input 
+          className="CardList-input"
           type="checkbox"
-          className="CardList-check"
           checked={props.card.status}
           onChange={handleChange}
-        /> 
-        }
-      </button>
-      <div className={"CardList-cardContent" + ((props.active && props.card.id !== 0) ? " isActive" : "")}>
-        {props.card.excerpt}
-      </div>
-
+        />
+        <span className="CardList-pseudoCheck"></span>
+      </label>      
     </li>
   )
 }

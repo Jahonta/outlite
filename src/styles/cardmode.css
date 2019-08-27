@@ -9,14 +9,15 @@
 
 .Accordion,
 .CardInspector {
-  width: 50%;
   padding: 1rem;
   display: flex;
-  justify-content: center;
-  
+  justify-content: center;  
 }
 
+/* ACCORDION */
+
 .Accordion {
+  flex-grow: 2;
   overflow-y: scroll;
   position: relative;  
 }
@@ -32,40 +33,100 @@
 }
 
 .CardList-item {
-  width: 100%;  
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--light-primary-color); 
+  cursor: pointer;
+  padding: 0.75rem;
+  vertical-align: middle;  
+  line-height: 1;
+}
+
+.CardList-item:hover {
+  background-color: var(--divider-color);
+}
+
+.isChecked.CardList-item {
+  background-color: var( --success-primary);
+  color: var(--success-text);
+}
+
+.isChecked.CardList-item:hover {
+  background-color: var( --success-accent);
+}
+
+.CardList-cardNum {
+  width: 15%;
+  text-align: left;
 }
 
 .CardList-cardButton {
-  width: 100%;
-  background-color: var(--light-primary-color);  
-  display: flex;
-  justify-content: space-between;
+  flex-grow: 1;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;  
+  background-color: transparent;
+  color: inherit;
+  width: 70%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .isNew.CardList-cardButton {
   background-color: var(--text-primary-color);
   color: var(--light-primary-color);
-  justify-content: center;
+  margin-bottom: 0.5rem;  
+  width: 100%;
+  text-align: center;
 }
 
-.isChecked.CardList-cardButton {
-  background-color: var(--divider-color);
-  color: var(--dark-primary-color);
-}
 .CardList-cardTitle {
-  margin: 0 1rem;
+  margin: 0 1rem;  
 }
 
-.CardList-cardContent {
-  display: none;
+.CardList-check {
+  width: 15%;
+  text-align: right;
+}
+
+.CardList-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.CardList-pseudoCheck {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  border-radius: 0.05rem;
   background-color: var(--light-primary-color);
-  border: 1px solid var(--divider-color);
-  padding: 0.5rem;
-  white-space: pre-line;
+  box-shadow: 0 0 0 0.1rem var(--dark-primary-color);
 }
 
-.isActive.CardList-cardContent {
-  display: block;
+.CardList-input:checked + .CardList-pseudoCheck {
+  box-shadow: 0 0 0 0.1rem var(--success-text);
+  background-color: var(--success-text);
+  background-image: url('data:image/svg+xml,%0A%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"%3E%3Cpolyline fill="none" stroke="%23fff" stroke-width="3" points="1.079 4.999 5 9 10.837 2"/%3E%3C/svg%3E');
+}
+
+.CardList-input:focus + .CardList-pseudoCheck{
+  box-shadow: 0 0 0 0.1rem var(--dark-primary-color),
+              0 0 0 0.2rem var(--success-text);
+}
+
+.CardList-input:checked:focus + .CardList-pseudoCheck{
+  box-shadow: 0 0 0 0.1rem var(--divider-color),
+              0 0 0 0.2rem var(--success-text);
+}
+
+/* CARD INSPECTOR */
+
+.CardInspector {
+  flex-grow: 3;
 }
 
 .CardInspector-form {
