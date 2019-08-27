@@ -1,6 +1,6 @@
 /* CARD MODE */
 
-.CardMode {  
+.CardMode {
   color: var(--primary-text-color);
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@
 .CardInspector {
   padding: 1rem;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 /* ACCORDION */
@@ -19,7 +19,7 @@
 .Accordion {
   flex-grow: 2;
   overflow-y: scroll;
-  position: relative;  
+  position: relative;
 }
 
 .CardList {
@@ -29,31 +29,33 @@
   width: 100%;
   position: absolute;
   top: 0;
-  left: 0;  
+  left: 0;
 }
 
 .CardList-item {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--light-primary-color); 
+  background-color: var(--light-primary-color);
   cursor: pointer;
   padding: 0.75rem;
-  vertical-align: middle;  
+  vertical-align: middle;
   line-height: 1;
 }
 
+.isActive.CardList-item,
 .CardList-item:hover {
   background-color: var(--divider-color);
 }
 
 .isChecked.CardList-item {
-  background-color: var( --success-primary);
+  background-color: var(--success-primary);
   color: var(--success-text);
 }
 
+.isActive.isChecked.CardList-item,
 .isChecked.CardList-item:hover {
-  background-color: var( --success-accent);
+  background-color: var(--success-accent);
 }
 
 .CardList-cardNum {
@@ -64,27 +66,34 @@
 .CardList-cardButton {
   flex-grow: 1;
   border: none;
+  cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;  
+  font-weight: 600;
   background-color: transparent;
   color: inherit;
+  font-weight: normal;
   width: 70%;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.CardList-cardButton:focus {
+  outline: none;
+}
 
 .isNew.CardList-cardButton {
+  position: sticky;
+  top: -1rem;
+  margin-top: -1rem;
   background-color: var(--text-primary-color);
   color: var(--light-primary-color);
-  margin-bottom: 0.5rem;  
   width: 100%;
   text-align: center;
 }
 
 .CardList-cardTitle {
-  margin: 0 1rem;  
+  margin: 0 1rem;
 }
 
 .CardList-check {
@@ -113,14 +122,14 @@
   background-image: url('data:image/svg+xml,%0A%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"%3E%3Cpolyline fill="none" stroke="%23fff" stroke-width="3" points="1.079 4.999 5 9 10.837 2"/%3E%3C/svg%3E');
 }
 
-.CardList-input:focus + .CardList-pseudoCheck{
+.CardList-input:focus + .CardList-pseudoCheck {
   box-shadow: 0 0 0 0.1rem var(--dark-primary-color),
-              0 0 0 0.2rem var(--success-text);
+    0 0 0 0.2rem var(--success-text);
 }
 
-.CardList-input:checked:focus + .CardList-pseudoCheck{
+.CardList-input:checked:focus + .CardList-pseudoCheck {
   box-shadow: 0 0 0 0.1rem var(--divider-color),
-              0 0 0 0.2rem var(--success-text);
+    0 0 0 0.2rem var(--success-text);
 }
 
 /* CARD INSPECTOR */
