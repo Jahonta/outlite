@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CardMode from './components/CardMode';
+import TextMode from './components/TextMode';
+import SwitchMode from './components/SwitchMode';
 
 const App = () => {
   // Data and Hooks
@@ -15,6 +17,7 @@ const App = () => {
   const data = JSON.parse(localStorage.getItem('cards')) || [emptyCard];
   const [cards, setCards] = useState(data);
   const [active, setActive] = useState(0);
+  const [mode, setMode] = useState(0);
 
   useEffect(() => {
     putIntoStorage(cards);
@@ -104,13 +107,19 @@ const handleDrop = (new_cards) => {
   return (
     <div className="page">
       <Header />
+      <SwitchMode mode={mode} toggleMode={() => mode === 0 ? setMode(1) : setMode(0)}/>
+      {mode === 0 ? 
       <CardMode 
         cards={cards}
         active={getCard(active)}
         clickHandler={handleClick}
         dropHandler={handleDrop}
         submitHandler={handleSubmit}
-        />
+        /> :
+        <TextMode />
+    
+    }
+      
       <Footer />
     </div>
   )

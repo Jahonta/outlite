@@ -5,10 +5,7 @@ import CardInspector from './CardInspector';
 const CardMode = (props) => {
 
   return (
-    <>   
-      <nav className="SwitchModeLink">
-        Перейти в текстовый режим
-        </nav>
+
       <main className="CardMode">
         <Accordion 
           cards={props.cards}
@@ -22,7 +19,6 @@ const CardMode = (props) => {
           submitHandler={props.submitHandler}
         />      
       </main>
-    </>
   )
 }
 
