@@ -4,6 +4,7 @@ const CardInspector = (props) => {
   const [title, setTitle] = useState(props.active.title);
   const [excerpt, setExcerpt] = useState(props.active.excerpt);
   const [content, setContent] = useState(props.active.content);
+  const [saved, setSaved] = useState(true);
 
 useEffect(() => {
   setTitle(props.active.title);
@@ -13,19 +14,22 @@ useEffect(() => {
 [props.active]
 );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const card = {
+const card = {
     id: props.active.id,
     title,
     excerpt,
     content,
     status: props.active.status,
-  };
+};
+
+const autosave = () => {
+  if (props.active.id === 0) return;    
   props.submitHandler(card);
-  };
+  setSaved(true)
+};
 
   const handleChange = (e) => {
+    setSaved(false);
     switch (e.target.name) {
       case 'title':
         setTitle(e.target.value);
@@ -44,18 +48,31 @@ useEffect(() => {
 
   const handleClick = (e) => {
     const action = e.target.dataset.action;
-    if (action === "cancel") {
-      setTitle(props.active.title);
-      setExcerpt(props.active.excerpt);
-      setContent(props.active.content);
-      return;
-    }
-    props.clickHandler(props.active.id, action);
+    switch (action) {
+      case 'cancel':
+        setTitle(props.active.title);
+        setExcerpt(props.active.excerpt);
+        setContent(props.active.content);
+        break;
+      case 'create':
+        e.preventDefault();
+        props.submitHandler(card);
+        setSaved(true)
+        break;
+
+      default:
+        props.clickHandler(props.active.id, action);
+        break;
+  }
   }
 
   return (
     <div className="CardInspector">
-      <form onSubmit={handleSubmit} className="CardInspector-form">
+      <div className="CardInspector-title">
+        <span className={"CardInspector-saved" + (saved ? "" : " isNot")} title={(saved ? "Сохранено" : "Есть несохраненные данные")}></span>
+        <span>{title}</span>
+      </div>
+      <form className="CardInspector-form">
         
           Заголовок: 
           <input 
@@ -63,6 +80,7 @@ useEffect(() => {
           name="title"
           value={title}
           onChange={handleChange}
+          onBlur={() => autosave()}
           className="CardInspector-input"
         />
 
@@ -72,6 +90,7 @@ useEffect(() => {
           name="excerpt"
           value={excerpt}
           onChange={handleChange}
+          onBlur={() => autosave()}
           className="CardInspector-excerpt"
         />  
 
@@ -80,21 +99,10 @@ useEffect(() => {
           value={content}
           name="content"
           onChange={handleChange}
+          onBlur={() => autosave()}
           className="CardInspector-content"
         />
 
-        <button 
-          type="submit"
-          className="btn CardInspector-save">
-            Сохранить
-          </button>
-          <button 
-          type="button"
-          data-action="cancel"
-          className="btn"
-          onClick={handleClick}>
-            Oтменить
-          </button>
           {
             props.active.id !== 0 ? 
               <button 
@@ -103,8 +111,23 @@ useEffect(() => {
           className="btn CardInspector-delete"
           onClick={handleClick}>
             Удалить
-          </button> : ''
-            
+          </button> : 
+          <div className="CardInspector-btnBox">
+          <button 
+          type="submit"
+          data-action="create"
+          className="btn CardInspector-create"
+          onClick={handleClick}>
+            Создать
+          </button>
+          <button 
+            type="reset"
+            data-action="cancel"
+            className="btn CardInspector-cancel"
+            onClick={handleClick}>
+            Отмена
+          </button>
+          </div>        
           }
           
       </form>          

@@ -94,6 +94,9 @@ const handleClick = (id, action) => {
         setCards(new_cards);
       }
       break;
+    case 'create':
+      handleSubmit();
+      break;
     default:
       break;
   }
