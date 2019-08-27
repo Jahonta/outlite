@@ -82,11 +82,7 @@ const handleClick = (id, action) => {
       handleStatusChange(id);
       break;
     case 'card':
-      if (id === active) {
-        setActive(0);
-      } else {
-        setActive(id);
-      }      
+      setActive(id);
       break;    
     case 'delete':
       if (id !== 0) {

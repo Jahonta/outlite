@@ -34,17 +34,16 @@
 
 .CardList-item {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   background-color: var(--light-primary-color);
   cursor: pointer;
-  padding: 0.75rem;
   vertical-align: middle;
   line-height: 1;
+  display: flex;
 }
 
 .isActive.CardList-item,
-.CardList-item:hover {
+.CardList-item:hover,
+.CardList-cardButton:focus {
   background-color: var(--divider-color);
 }
 
@@ -54,19 +53,18 @@
 }
 
 .isActive.isChecked.CardList-item,
-.isChecked.CardList-item:hover {
+.isChecked.CardList-item:hover,
+.isChecked .CardList-cardButton:focus {
   background-color: var(--success-accent);
 }
 
-.CardList-cardNum {
-  width: 15%;
-  text-align: left;
-}
-
 .CardList-cardButton {
+  display: flex;
+  justify-content: space-between;
   flex-grow: 1;
   border: none;
   cursor: pointer;
+  padding: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
@@ -81,7 +79,7 @@
 
 .CardList-cardButton:focus {
   outline: none;
-  border-bottom: 3px solid var(--default-primary-color);
+  background-color: var(--default-primary-color);
 }
 
 .isNew.CardList-cardButton {
@@ -93,6 +91,12 @@
   width: 100%;
   text-align: center;
 }
+
+.CardList-cardNum {
+  width: 15%;
+  text-align: left;
+}
+
 
 .CardList-cardTitle {
   margin: 0 1rem;

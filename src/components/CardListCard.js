@@ -14,20 +14,20 @@ const CardListCard = (props) => {
   }
 
   return (
-    <li className={"CardList-item" + (props.card.status ? " isChecked" : "") + (props.active ? " isActive" : "")} id={props.card.id} onClick={handleClick}>
-      <span className="CardList-cardNum">{props.num}</span> 
+    <li className={"CardList-item" + (props.card.status ? " isChecked" : "") + (props.active ? " isActive" : "")} id={props.card.id} onClick={handleClick}>     
       <button className="CardList-cardButton" type="button">
+        <span className="CardList-cardNum">{props.num}</span> 
         <span className="CardList-cardTitle">{props.card.title}</span>
-      </button>
-      <label className="CardList-check" title="Done!">
-        <input 
-          className="CardList-input"
-          type="checkbox"
-          checked={props.card.status}
-          onChange={handleChange}
-        />
-        <span className="CardList-pseudoCheck"></span>
-      </label>      
+        <label className="CardList-check" title="Done!">
+          <input 
+            className="CardList-input"
+            type="checkbox"
+            checked={props.card.status}
+            onChange={handleChange}
+          />
+          <span className="CardList-pseudoCheck"></span>
+      </label>
+      </button>          
     </li>
   )
 }
