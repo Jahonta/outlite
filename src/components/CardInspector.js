@@ -85,7 +85,6 @@ const autosave = () => {
           onChange={handleChange}
           onBlur={() => autosave()}
           className="CardInspector-input"
-          required={true}
         />
 {
           props.active.id !== 0 ? 

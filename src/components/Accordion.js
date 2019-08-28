@@ -3,6 +3,7 @@ import CardListCard from './CardListCard';
 import NewCard from './NewCard';
 
 const Accordion = (props) => {
+
   return (
     <div className="Accordion">
       <ul className="CardList">
@@ -15,7 +16,7 @@ const Accordion = (props) => {
               onClick={props.clickHandler} 
             /> :
             <CardListCard
-            num = {i}
+            num={i}
             card={card} 
             key={card.id} 
             active={props.active.id === card.id}

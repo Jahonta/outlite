@@ -1,0 +1,95 @@
+/* Controls */
+
+.Controls {
+  margin-bottom: 1rem;
+}
+
+.Controls-check {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.Controls-pseudoCheck {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  border-radius: 0.05rem;
+  background-color: var(--light-primary-color);
+  box-shadow: 0 0 0 0.1rem var(--dark-primary-color);
+}
+
+.Controls-check:checked + .Controls-pseudoCheck{
+  box-shadow: 0 0 0 0.1rem var(--success-text);
+  background-color: var(--success-text);
+  background-image: url('data:image/svg+xml,%0A%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"%3E%3Cpolyline fill="none" stroke="%23fff" stroke-width="3" points="1.079 4.999 5 9 10.837 2"/%3E%3C/svg%3E');
+}
+
+.Controls-check:focus + .Controls-pseudoCheck {
+  box-shadow: 0 0 0 0.1rem var(--dark-primary-color),
+    0 0 0 0.2rem var(--success-text);
+}
+
+.Controls-check:checked:focus + .Controls-pseudoCheck {
+  box-shadow: 0 0 0 0.1rem var(--divider-color),
+    0 0 0 0.2rem var(--success-text);
+}
+
+.Controls-text {
+  margin-left: 1rem;
+}
+
+/* Notepad */
+
+.Notepad {
+  max-height: 32rem;
+  overflow: auto;
+}
+
+.Notepad-item {
+  border: 1px solid var(--divider-color);
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.isChecked.Notepad-item {
+  border: 1px solid var(--success-text);
+  background-color: var(--success-primary);
+  color: var(--success-text);
+}
+
+.isActive.Notepad-item {
+  background-color: var(--divider-color);
+  border: 1px solid var(--dark-primary-color);
+}
+
+.Notepad-title {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.Notepad-edit {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--dark-primary-color);
+  padding: 0 1rem; 
+  vertical-align: middle;
+}
+
+.Notepad-item:hover .Notepad-edit {
+  display: inline-block;
+}
+
+.Notepad-excerpt {
+  color: var(--dark-primary-color);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  padding: 0 1rem;
+}
+
+.Notepad-content {
+  white-space: pre-wrap;
+}

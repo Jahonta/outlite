@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardListCard = (props) => {
+const CardListCard = (props, ref) => {
   const handleClick = (e) => {
     const id = parseInt(e.target.closest('.CardList-item').id);
     const action = "card";
@@ -14,7 +14,11 @@ const CardListCard = (props) => {
   }
 
   return (
-    <li className={"CardList-item" + (props.card.status ? " isChecked" : "") + (props.active ? " isActive" : "")} id={props.card.id} onClick={handleClick}>     
+    <li 
+      className={"CardList-item" + (props.card.status ? " isChecked" : "") + (props.active ? " isActive" : "")} 
+      id={props.card.id} 
+      onClick={handleClick}
+    >     
       <button className="CardList-cardButton" type="button">
         <span className="CardList-cardNum">{props.num}</span> 
         <span className="CardList-cardTitle">{props.card.title}</span>

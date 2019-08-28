@@ -59,6 +59,10 @@ const updateCards = (obj) => {
   setCards(new_cards);
 };
 
+const toggleMode = () => {
+  mode === 0 ? setMode(1) : setMode(0);
+};
+
 // Handlers
 
 const handleSubmit = (obj) => {
@@ -106,7 +110,7 @@ const handleDrop = (new_cards) => {
   return (
     <div className="page">
       <Header />
-      <SwitchMode mode={mode} toggleMode={() => mode === 0 ? setMode(1) : setMode(0)}/>
+      <SwitchMode mode={mode} toggleMode={toggleMode}/>
       {mode === 0 ? 
       <CardMode 
         cards={cards}
@@ -115,7 +119,12 @@ const handleDrop = (new_cards) => {
         dropHandler={handleDrop}
         submitHandler={handleSubmit}
         /> :
-        <TextMode />
+        <TextMode 
+          cards={cards}
+          active={getCard(active)}
+          clickHandler={handleClick}
+          toCardMode={toggleMode}
+        />
     
     }
       
