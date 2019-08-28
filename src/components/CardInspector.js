@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 const CardInspector = (props) => {  
+  // Hooks
   const [title, setTitle] = useState(props.active.title);
   const [excerpt, setExcerpt] = useState(props.active.excerpt);
   const [content, setContent] = useState(props.active.content);
@@ -14,6 +15,7 @@ useEffect(() => {
 [props.active]
 );
 
+// Data
 const card = {
     id: props.active.id,
     title,
@@ -22,14 +24,15 @@ const card = {
     status: props.active.status,
 };
 
+
 const autosave = () => {
-  if (props.active.id === 0) return;    
+  if (props.active.id === 0) return;
   props.submitHandler(card);
   setSaved(true)
 };
 
+// Handlers
   const handleChange = (e) => {
-    setSaved(false);
     switch (e.target.name) {
       case 'title':
         setTitle(e.target.value);
@@ -82,8 +85,11 @@ const autosave = () => {
           onChange={handleChange}
           onBlur={() => autosave()}
           className="CardInspector-input"
+          required={true}
         />
-
+{
+          props.active.id !== 0 ? 
+          <>
           Краткое описание: 
         <textarea
           type="text"
@@ -94,7 +100,7 @@ const autosave = () => {
           className="CardInspector-excerpt"
         />  
 
-          Содержание:
+          Полный текст:
           <textarea
           value={content}
           name="content"
@@ -103,15 +109,15 @@ const autosave = () => {
           className="CardInspector-content"
         />
 
-          {
-            props.active.id !== 0 ? 
+          
               <button 
           type="button"
           data-action="delete"
           className="btn CardInspector-delete"
           onClick={handleClick}>
             Удалить
-          </button> : 
+          </button> 
+          </> : 
           <div className="CardInspector-btnBox">
           <button 
           type="submit"

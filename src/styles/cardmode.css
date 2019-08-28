@@ -4,7 +4,9 @@
   color: var(--primary-text-color);
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   padding-bottom: 2rem;
+  min-height: 32rem;
 }
 
 .Accordion,
@@ -84,12 +86,12 @@
 
 .isNew.CardList-cardButton {
   position: sticky;
+  justify-content: center;
   top: -1rem;
   margin-top: -1rem;
   background-color: var(--text-primary-color);
   color: var(--light-primary-color);
   width: 100%;
-  text-align: center;
 }
 
 .CardList-cardNum {
@@ -142,6 +144,7 @@
 
 .CardInspector {
   width: 70%;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
 }
@@ -198,12 +201,13 @@
 }
 
 .CardInspector-btnBox {
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.CardInspector-create {
+.CardInspector-create {  
   background-color: var(--success-primary);
 }
 
