@@ -101,6 +101,8 @@
 
 .CardList-cardTitle {
   margin: 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .CardList-check {

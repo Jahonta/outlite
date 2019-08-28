@@ -69,12 +69,18 @@
   border: 1px solid var(--dark-primary-color);
 }
 
-.Notepad-title {
+.Notepad-header {
   margin: 0;
   margin-bottom: 0.5rem;
+  display: flex;
 }
 
-.Notepad-edit {
+.Notepad-title {
+  margin: 0;
+}
+
+.Notepad-edit,
+.Notepad-open {
   display: none;
   font-size: 0.75rem;
   color: var(--dark-primary-color);
@@ -82,7 +88,8 @@
   vertical-align: middle;
 }
 
-.Notepad-item:hover .Notepad-edit {
+.Notepad-item:hover .Notepad-edit,
+.Notepad-item:hover .Notepad-open {
   display: inline-block;
 }
 
@@ -96,4 +103,5 @@
 
 .Notepad-content {
   white-space: pre-wrap;
+  line-height: 1.5;
 }

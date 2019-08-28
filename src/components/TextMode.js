@@ -8,8 +8,12 @@ const TextMode = (props) => {
   const activeRef = useRef(null);
 
   useEffect(() => {
-    activeRef.current !== null && activeRef.current.scrollIntoView({ block: 'nearest' });
+    activeRef.current !== null && activeRef.current.scrollIntoView({ block: 'start' });
 }, [props.active]);
+
+useEffect(() => {
+    activeRef.current !== null && activeRef.current.scrollIntoView({ block: 'center', behavior: "smooth" });
+}, [excerpt, content]);
 
 
   // Handlers
@@ -59,14 +63,15 @@ const TextMode = (props) => {
                 id={card.id}
                 onClick={handleClick}
                 ref={props.active.id === card.id ? activeRef : null}>
-                  <h3 className="Notepad-title">
+                  <header className="Notepad-header">                    
                     <label>
                       <input type="checkbox" className="Controls-check" name="status" checked={card.status} onChange={handleCheck}></input>
                       <span className="Controls-pseudoCheck isStatus"></span>
                     </label>
-                    {card.title}
+                    <h3 className="Notepad-title">{card.title}</h3>
                     <span className="Notepad-edit" onClick={handleEdit}>Редактировать</span>
-                  </h3>
+                  </header>
+                  
                   {excerpt && <div className="Notepad-excerpt">{card.excerpt}</div>}
                   {content && <div className="Notepad-content">{card.content}</div>}
               </div>

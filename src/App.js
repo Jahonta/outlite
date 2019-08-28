@@ -6,6 +6,7 @@ import TextMode from './components/TextMode';
 import SwitchMode from './components/SwitchMode';
 
 const App = () => {
+
   // Data and Hooks
   const emptyCard = { 
   id: 0,
@@ -63,8 +64,37 @@ const toggleMode = () => {
   mode === 0 ? setMode(1) : setMode(0);
 };
 
-// Handlers
+const setExport = () => {
+  const dataStr = JSON.stringify(localStorage.getItem('cards'));
+  const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+  const date = new Date();
+  const dateString = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+  const exportFileDefaultName = `My-outlite-${dateString}.json`;
 
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+const getImport = (file) => {
+  if (file.type !== "application/json") return;
+  const reader = new FileReader();
+  reader.readAsText(file);  
+  reader.onload = function() {
+    const imported = JSON.parse(JSON.parse(reader.result));
+    setCards(imported);
+  };
+  reader.onerror = function() {
+    console.log(reader.error);
+  };
+}
+
+const reset = () => {
+  setCards([emptyCard]);
+}
+
+// Handlers
 const handleSubmit = (obj) => {
   if (obj.id === 0) {
   obj.id = getEmptyID();
@@ -109,7 +139,11 @@ const handleDrop = (new_cards) => {
 // Render
   return (
     <div className="page">
-      <Header />
+      <Header 
+        handleExport={setExport}
+        handleImport={getImport}
+        handleReset={reset}
+      />
       <SwitchMode mode={mode} toggleMode={toggleMode}/>
       {mode === 0 ? 
       <CardMode 
@@ -124,14 +158,11 @@ const handleDrop = (new_cards) => {
           active={getCard(active)}
           clickHandler={handleClick}
           toCardMode={toggleMode}
-        />
-    
-    }
-      
+        />    
+    }      
       <Footer />
     </div>
-  )
-  
+  )  
 }
 
 export default App;

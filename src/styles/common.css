@@ -91,13 +91,17 @@ body {
   transition: 0.3s;
 }
 
-.Controls-btn:not(:last-child) {
-  margin-right: 0.7rem;
+.Controls-btn:not(:first-child) {
+  margin-left: 0.75rem;
 }
 
 .Controls-btn:hover {
   background-color: var(--light-primary-color);
   color: var(--primary-text-color);
+}
+
+.Controls-input {
+  display: none;
 }
 
 /* SWITCH LINK */
