@@ -19,6 +19,10 @@
   box-shadow: 0 0 0 0.1rem var(--dark-primary-color);
 }
 
+.isStatus.Controls-pseudoCheck {
+  margin-right: 1rem;
+}
+
 .Controls-check:checked + .Controls-pseudoCheck{
   box-shadow: 0 0 0 0.1rem var(--success-text);
   background-color: var(--success-text);

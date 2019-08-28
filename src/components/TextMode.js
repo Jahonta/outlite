@@ -8,7 +8,7 @@ const TextMode = (props) => {
   const activeRef = useRef(null);
 
   useEffect(() => {
-    activeRef.current !== null && activeRef.current.scrollIntoView({ block: 'start' });
+    activeRef.current !== null && activeRef.current.scrollIntoView({ block: 'nearest' });
 }, [props.active]);
 
 
@@ -18,6 +18,11 @@ const TextMode = (props) => {
     console.log(checkbox);
     if (checkbox === "excerpt") setExcerpt(!excerpt);
     if (checkbox === "content") setContent(!content);
+    if (checkbox === "status") {
+      const id = parseInt(e.target.closest('.Notepad-item').id, 10);
+      const action = "check";
+      props.clickHandler(id, action);
+    }
   }
 
   const handleClick = (e) => {
@@ -55,6 +60,10 @@ const TextMode = (props) => {
                 onClick={handleClick}
                 ref={props.active.id === card.id ? activeRef : null}>
                   <h3 className="Notepad-title">
+                    <label>
+                      <input type="checkbox" className="Controls-check" name="status" checked={card.status} onChange={handleCheck}></input>
+                      <span className="Controls-pseudoCheck isStatus"></span>
+                    </label>
                     {card.title}
                     <span className="Notepad-edit" onClick={handleEdit}>Редактировать</span>
                   </h3>
