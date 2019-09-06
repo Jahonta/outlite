@@ -28,11 +28,12 @@ const card = {
 const autosave = () => {
   if (props.active.id === 0) return;
   props.submitHandler(card);
-  setSaved(true)
+  setSaved(true);
 };
 
 // Handlers
   const handleChange = (e) => {
+    setSaved(false);
     switch (e.target.name) {
       case 'title':
         setTitle(e.target.value);

@@ -92,6 +92,8 @@ const getImport = (file) => {
 
 const reset = () => {
   setCards([emptyCard]);
+  setActive(0);
+  setMode(0);
 }
 
 // Handlers
