@@ -1,0 +1,25 @@
+@import '../styles/variables';
+
+.Nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+  width: 100%;
+  height: 5rem;  
+  background-color: $primary-color-light;
+}
+
+  a {
+    display: block;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: $primary-color-text;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+          background-color: $accent-color;
+    }
+  }

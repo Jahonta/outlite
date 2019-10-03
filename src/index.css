@@ -1,5 +1,10 @@
-@import './styles/normalize.css';
-@import './styles/variables.css';
-@import './styles/common.css';
-@import './styles/cardmode.css';
-@import './styles/textmode.css';
+/* @import-normalize; */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
